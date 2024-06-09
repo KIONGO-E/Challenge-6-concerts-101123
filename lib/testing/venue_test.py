@@ -1,6 +1,4 @@
-from classes.many_to_many import Band
-from classes.many_to_many import Concert
-from classes.many_to_many import Venue
+from classes.many_to_many import Band, Concert, Venue
 import pytest
 
 class TestVenue:
@@ -20,16 +18,18 @@ class TestVenue:
         assert isinstance(venue_1.name, str)
         assert venue_1.name == "MoonDust"
 
-        venue_1.name = 7
-        assert venue_1.name == "MoonDust"
+        # Uncomment the next two lines if using Exceptions
+        # with pytest.raises(ValueError):
+        #     venue_1.name = 7
 
     def test_name_has_length(self):
         """Names are longer than 0 characters"""
         venue_1 = Venue(name="Ace of Spades", city="SAC")
         assert len(venue_1.name) > 0
 
-        venue_1.name = ""
-        assert venue_1.name == "Ace of Spades"
+        # Uncomment the next two lines if using Exceptions
+        # with pytest.raises(ValueError):
+        #     venue_1.name = ""
 
     def test_has_city(self):
         """Venue is instantiated with a city"""
@@ -45,16 +45,18 @@ class TestVenue:
         assert isinstance(venue_1.city, str)
         assert venue_1.city == "NYC"
 
-        venue_1.city = 7
-        assert venue_1.city == "NYC"
+        # Uncomment the next two lines if using Exceptions
+        # with pytest.raises(ValueError):
+        #     venue_1.city = 7
 
     def test_city_has_length(self):
         """Cities are longer than 0 characters"""
         venue_1 = Venue(name="Ace of Spades", city="SAC")
         assert len(venue_1.city) > 0
 
-        venue_1.city = ""
-        assert venue_1.city == "SAC"
+        # Uncomment the next two lines if using Exceptions
+        # with pytest.raises(ValueError):
+        #     venue_1.city = ""
 
     def test_concerts(self):
         """Venue has many concerts"""

@@ -12,6 +12,7 @@ class TestBand:
         assert band_1.name == "boygenius"
         assert band_2.name == "spicegurls"
 
+
     def test_name_is_mutable_string(self):
         """names are mutable strings"""
         band_1 = Band(name="boygenius", hometown="NYC")
